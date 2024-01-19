@@ -6,7 +6,7 @@ This repository serves as a dedicated space for exploring and mastering advanced
 
 ## Description
 
-Welcome to the TypeScript Functional Programming Playground! This repository is crafted for the purpose of tutorials, hands-on experimentation, and in-depth analysis of functional programming in TypeScript. Whether you're a beginner getting acquainted with the basics or an experienced developer delving into the intricacies of functional programming, this repository offers a structured environment for your exploration.
+Welcome to the TypeScript Playground! This repository is crafted for the purpose of tutorials, hands-on experimentation, and in-depth analysis of programming in TypeScript. Whether you're a beginner getting acquainted with the basics or an experienced developer delving into the intricacies of functional programming, this repository offers a structured environment for your exploration.
 
 ## Features
 
