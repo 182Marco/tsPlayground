@@ -1,28 +1,28 @@
-# Functional Programming Playground
+# TypeScript Functional Programming Playground
 
 ## Overview
 
-This is an application designed for tutorial purposes, experimentation, and analysis of functional programming concepts.
+This repository serves as a dedicated space for exploring and mastering advanced TypeScript functionalities, particularly those related to functional programming concepts.
 
 ## Description
 
-Welcome to the Functional Programming Playground! This application serves as a playground for exploring and experimenting with functional programming concepts. Whether you are a beginner learning the basics or an experienced developer looking to dive deeper into functional programming, this app provides a hands-on environment for your exploration.
+Welcome to the TypeScript Functional Programming Playground! This repository is crafted for the purpose of tutorials, hands-on experimentation, and in-depth analysis of functional programming in TypeScript. Whether you're a beginner getting acquainted with the basics or an experienced developer delving into the intricacies of functional programming, this repository offers a structured environment for your exploration.
 
 ## Features
 
-- Output in console using TypeScript code
-- Integration with nodemon for automatic code reloading
+- Console output showcasing TypeScript code
+- Seamless integration with nodemon for automatic code reloading
 
 ## Getting Started
 
 1. Clone this repository.
-2. Install dependencies with `npm install`.
-3. Run the application with `npm start`.
+2. Install dependencies using `npm install`.
+3. Launch the application with `npm start`.
 
-Feel free to modify and extend the code in the `src` directory to suit your exploration needs. Happy coding!
+Feel free to modify and extend the code found in the `src` directory to align with your exploration and learning objectives. The goal is to maintain a well-organized repository that can serve as a valuable reference for future study.
+
+Happy coding!
 
 ---
 
-<p style="font-family: 'Courier New', monospace; font-size: 16px; color: #333; font-weight: bold;">
-Made with ❤️ by Frontend Developer Marco Milza
-</p>
+**Made with ❤️ by Frontend Developer Marco Milza**
