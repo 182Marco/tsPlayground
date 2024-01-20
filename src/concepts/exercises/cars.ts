@@ -26,7 +26,7 @@ type IAggregateCars = (
   cars: Car[],
 ) => Record<string, Pick<Car, 'color' | 'year'>>;
 
-export const aggregateCars: IAggregateCars = cars =>
+export const getAggregateCars: IAggregateCars = cars =>
   cars.reduce(
     (a, v) => ({
       ...a,

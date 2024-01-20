@@ -26,7 +26,7 @@ type IOrganizeInSingleObj = (
   users: IUser[],
 ) => Record<string, Pick<IUser, 'email' | 'id'>>;
 
-export const OrganizeInSingleObj: IOrganizeInSingleObj = users =>
+export const getAggregateUsers: IOrganizeInSingleObj = users =>
   users.reduce(
     (a, v) => ({
       ...a,

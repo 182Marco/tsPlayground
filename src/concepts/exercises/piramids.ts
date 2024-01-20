@@ -48,7 +48,7 @@ export const pyramids: Pyramid[] = [
 type IAggregate = Record<string, Omit<Pyramid, 'name'>>;
 type IGetAggregate = (p: Pyramid[]) => IAggregate;
 
-export const getAggregate: IGetAggregate = ar =>
+export const getAggregatePiramids: IGetAggregate = ar =>
   ar.reduce((a, v) => {
     const {name, ...rest} = v;
     return {...a, [name]: {...rest}};

@@ -100,7 +100,7 @@ export const rivers: River[] = [
 
 type IGetIObj = (ar: River[]) => Record<string, Omit<River, 'name'>>;
 
-export const getObj: IGetIObj = ar =>
+export const getAggrgateRivers: IGetIObj = ar =>
   ar.reduce((a, v) => {
     const {name, ...rest} = v;
     return {...a, [name]: {...rest}};
