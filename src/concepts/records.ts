@@ -1,10 +1,10 @@
-interface MyUser {
+export interface IUser {
   fullName: string;
   email: string;
   id: number;
 }
 
-export const users: MyUser[] = [
+export const users: IUser[] = [
   {
     fullName: 'Alice',
     email: 'alice@gmail.com',
@@ -22,16 +22,18 @@ export const users: MyUser[] = [
   },
 ];
 
-type IusersAsObj = Record<string, Pick<MyUser, 'email' | 'id'>>;
+type IusersAsObj = Record<string, Pick<IUser, 'email' | 'id'>>;
 
-type IOrganizeInSingleObj = (users: MyUser[]) => IusersAsObj;
+type IOrganizeInSingleObj = (users: IUser[]) => IusersAsObj;
 
-export const OrganizeInSingleObj: IOrganizeInSingleObj = users => {
-  return users.reduce((acc, cur) => {
-    acc[cur.fullName] = {
-      email: cur.email,
-      id: cur.id,
-    };
-    return acc;
-  }, {} as IusersAsObj);
-};
+export const OrganizeInSingleObj: IOrganizeInSingleObj = users =>
+  users.reduce(
+    (a, v) => ({
+      ...a,
+      [v.fullName]: {
+        email: v.email,
+        id: v.id,
+      },
+    }),
+    {},
+  );
