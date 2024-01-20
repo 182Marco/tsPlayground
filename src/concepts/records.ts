@@ -22,9 +22,9 @@ export const users: IUser[] = [
   },
 ];
 
-type IusersAsObj = Record<string, Pick<IUser, 'email' | 'id'>>;
-
-type IOrganizeInSingleObj = (users: IUser[]) => IusersAsObj;
+type IOrganizeInSingleObj = (
+  users: IUser[],
+) => Record<string, Pick<IUser, 'email' | 'id'>>;
 
 export const OrganizeInSingleObj: IOrganizeInSingleObj = users =>
   users.reduce(
