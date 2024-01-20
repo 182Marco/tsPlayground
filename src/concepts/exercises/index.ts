@@ -1,3 +1,4 @@
-export * from './firstOnRecords';
-export * from './secondOnRecords';
-export * from './third';
+export * from './cars';
+export * from './piramids';
+export * from './rivers';
+export * from './cities';

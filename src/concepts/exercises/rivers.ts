@@ -98,7 +98,6 @@ export const rivers: River[] = [
   },
 ];
 
-type IObj = Record<string, Omit<River, 'name'>>;
 type IGetIObj = (ar: River[]) => Record<string, Omit<River, 'name'>>;
 
 export const getObj: IGetIObj = ar =>
