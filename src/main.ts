@@ -1,3 +1,3 @@
 import * as c from './concepts';
 
-console.log(`lakes ---> `, c.getAggregateLakes2(c.lakes));
+console.log(`motos ---> `, c.getAggregateMotos2(c.motos));
