@@ -215,10 +215,9 @@ export const getAggregatedCountries3: IGetAggregate = ar =>
 
 export const agr = getAggregatedCountries3(middleEasternCountries);
 
-
 type IGetBackToArray = (a: IAggregate) => MiddleEasternCountry[];
 
-export const getBackToCountriesAr: IGetBackToArray = (agr: any) =>
+export const getBackToCountriesAr: IGetBackToArray = agr =>
   Object.keys(agr).map(k => ({
     name: k,
     ...{...agr[k]},
