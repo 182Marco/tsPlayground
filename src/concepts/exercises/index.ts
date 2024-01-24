@@ -8,3 +8,4 @@ export * from './motos';
 export * from './mountains';
 export * from './piramids';
 export * from './rivers';
+export * from './trees';

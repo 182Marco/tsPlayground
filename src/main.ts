@@ -1,6 +1,9 @@
 import * as c from './concepts';
 
 console.log(
-  `getBackToCastelsArray() ---> `,
-  c.getBackToCastelsArray(c.aggregateCatles),
+  `c.getAggregatedTrees(c.trees) ---> `,
+  c.getAggregatedTrees(c.trees),
 );
+c;
+
+console.log(`trees ---> `, c.treesBackToAr(c.getAggregatedTrees(c.trees)));
