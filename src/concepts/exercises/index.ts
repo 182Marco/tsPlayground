@@ -1,4 +1,5 @@
 export * from './cars';
+export * from './castles';
 export * from './countries';
 export * from './dogs';
 export * from './cities';

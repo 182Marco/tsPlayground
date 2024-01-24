@@ -1,3 +1,6 @@
 import * as c from './concepts';
 
-console.log(`getBackToCountriesAr ---> `, c.getBackToCountriesAr(c.agr));
+console.log(
+  `getBackToCastelsArray() ---> `,
+  c.getBackToCastelsArray(c.aggregateCatles),
+);

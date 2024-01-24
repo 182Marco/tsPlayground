@@ -213,7 +213,7 @@ export const getAggregatedCountries3: IGetAggregate = ar =>
     return {...a, [name]: {...rest}};
   }, {});
 
-export const agr = getAggregatedCountries3(middleEasternCountries);
+export const agrCountries = getAggregatedCountries3(middleEasternCountries);
 
 type IGetBackToArray = (a: IAggregate) => MiddleEasternCountry[];
 
