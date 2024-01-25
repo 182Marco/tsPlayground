@@ -1,5 +1,6 @@
 export * from './cars';
 export * from './castles';
+export * from './celestialBodies';
 export * from './countries';
 export * from './gymnast';
 export * from './doctors';
