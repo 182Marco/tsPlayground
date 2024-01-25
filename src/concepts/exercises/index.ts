@@ -1,6 +1,7 @@
 export * from './cars';
 export * from './castles';
 export * from './countries';
+export * from './gymnast';
 export * from './doctors';
 export * from './dogs';
 export * from './cities';
@@ -9,5 +10,6 @@ export * from './motos';
 export * from './mountains';
 export * from './piramids';
 export * from './rivers';
+export * from './runners';
 export * from './swimmers';
 export * from './trees';
