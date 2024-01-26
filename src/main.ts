@@ -1,7 +1,5 @@
 import * as c from './concepts';
 
-const getAgr = c.getAgrCelestialBodies(c.celestialBodies);
+const getAgr = c.getAgregatedSPCharcters(c.southParkCharacters);
 
 console.log(`getAgrC ---> `, getAgr);
-
-console.log('back ---> ', c.getBackToCelestialBodies(getAgr));

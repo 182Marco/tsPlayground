@@ -12,5 +12,6 @@ export * from './mountains';
 export * from './piramids';
 export * from './rivers';
 export * from './runners';
+export * from './southPark';
 export * from './swimmers';
 export * from './trees';
