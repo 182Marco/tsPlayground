@@ -2,6 +2,7 @@ export * from './cars';
 export * from './castles';
 export * from './celestialBodies';
 export * from './countries';
+export * from './famousPeople';
 export * from './gymnast';
 export * from './doctors';
 export * from './dogs';

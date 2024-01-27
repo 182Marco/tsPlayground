@@ -1,5 +1,5 @@
 import * as c from './concepts';
 
-const getAgr = c.getAgregatedSPCharcters(c.southParkCharacters);
+const famousPeople = c.getVipAgr(c.vips);
 
-console.log(`getAgrC ---> `, getAgr);
+console.log(`famous people ---> `, famousPeople);
