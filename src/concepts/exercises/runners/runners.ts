@@ -1,6 +1,6 @@
 import {IGetAgrRunners, AgrRunners} from './models';
 
-export const getAgrRunners: IGetAgrRunners = ar =>
+export const getAgregatedRunners: IGetAgrRunners = ar =>
   [...new Set(ar.flatMap(r => r.events))].reduce(
     (acc, cur) => ({
       ...acc,

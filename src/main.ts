@@ -1,5 +1,8 @@
 import * as c from './concepts';
 
-const famousPeople = c.getVipAgr(c.vips);
+const myObj = {
+  a: {a: 'a', b: 1},
+  c: 'c',
+};
 
-console.log(`famous people ---> `, famousPeople);
+console.log(c.deepCopy(myObj));
