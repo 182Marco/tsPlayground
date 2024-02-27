@@ -18,7 +18,7 @@ console.log(john);
 
 // alan.mother.age = 50;
 
-// console.log('sam --> ', sam);
+// console.log('sam --> ', sam.mother);
 
 const alan = {age: 16, mother: {name: 'Anna', age: 40}};
 
