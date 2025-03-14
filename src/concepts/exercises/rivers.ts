@@ -15,7 +15,7 @@ interface River {
   flowDirection: string;
 }
 
-export const rivers: River[] = [
+const rivers: River[] = [
   {
     name: 'Nilo',
     length: 6650,
@@ -100,8 +100,10 @@ export const rivers: River[] = [
 
 type IGetIObj = (ar: River[]) => Record<string, Omit<River, 'name'>>;
 
-export const getAggrgateRivers: IGetIObj = ar =>
+const getAggrgateRivers: IGetIObj = ar =>
   ar.reduce((a, v) => {
-    const {name, ...rest} = v;
-    return {...a, [name]: {...rest}};
+    const { name, ...rest } = v;
+    return { ...a, [name]: { ...rest } };
   }, {});
+
+export { getAggrgateRivers, rivers };

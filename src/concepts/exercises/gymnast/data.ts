@@ -1,6 +1,6 @@
-import {Gymnast} from './models';
+import { Gymnast } from './models';
 
-export const gymnasts: Gymnast[] = [
+const gymnasts: Gymnast[] = [
   {
     name: 'Simone Biles',
     age: '24',
@@ -23,3 +23,5 @@ export const gymnasts: Gymnast[] = [
     specialties: ['Horizontal Bar', 'Parallel Bars'],
   },
 ];
+
+export { gymnasts };

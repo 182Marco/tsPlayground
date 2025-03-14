@@ -1,6 +1,6 @@
-import {Doctor} from './models';
+import { Doctor } from './models';
 
-export const doctors: Doctor[] = [
+const doctors: Doctor[] = [
   {
     name: 'Dr. Smith',
     age: '35',
@@ -31,7 +31,7 @@ export const doctors: Doctor[] = [
     age: '38',
     specialities: ['Gastroenterology', 'Ophthalmology', 'Cardiology'],
   },
-  {name: 'Dr. Taylor', age: '41', specialities: ['Neurology', 'Orthopedics']},
+  { name: 'Dr. Taylor', age: '41', specialities: ['Neurology', 'Orthopedics'] },
   {
     name: 'Dr. Brown',
     age: '39',
@@ -48,3 +48,5 @@ export const doctors: Doctor[] = [
     specialities: ['Ophthalmology', 'Dermatology', 'Neurology'],
   },
 ];
+
+export { doctors };

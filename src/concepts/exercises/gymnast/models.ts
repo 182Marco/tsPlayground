@@ -1,9 +1,11 @@
-export interface Gymnast {
+interface Gymnast {
   name: string;
   age: string;
   specialties: string[];
 }
 
-export type IGymnastsNoSpec = Omit<Gymnast, 'name'>;
-export type IAgrAr = Record<string, IGymnastsNoSpec>[];
-export type IGetAgrGymnasts = (g: Gymnast[]) => IAgrAr;
+type IGymnastsNoSpec = Omit<Gymnast, 'name'>;
+type IAgrAr = Record<string, IGymnastsNoSpec>[];
+type IGetAgrGymnasts = (g: Gymnast[]) => IAgrAr;
+
+export { Gymnast, IGymnastsNoSpec, IAgrAr, IGetAgrGymnasts };

@@ -1,6 +1,6 @@
-import {ISwimmer} from './models';
+import { ISwimmer } from './models';
 
-export const swimmers: ISwimmer[] = [
+const swimmers: ISwimmer[] = [
   {
     name: 'Michael Phelps',
     age: '36',
@@ -22,3 +22,5 @@ export const swimmers: ISwimmer[] = [
     events: ['50m Freestyle', '100m Freestyle', '200m Freestyle'],
   },
 ];
+
+export { swimmers };

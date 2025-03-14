@@ -1,4 +1,4 @@
-export interface ICelestialBody {
+interface ICelestialBody {
   name: string;
   massSolar: number; // in solar masses
   distanceFromSun: number; // in million kilometers
@@ -7,12 +7,18 @@ export interface ICelestialBody {
   surfaceTemperature: number; // in degrees Celsius
 }
 
-export type ICelestialBodyNoName = Omit<ICelestialBody, 'name'>;
-export type IAgr = Record<string, ICelestialBodyNoName>;
-export type IGetAgr = (
-  c: ICelestialBody[],
-) => Record<string, ICelestialBodyNoName>;
+type ICelestialBodyNoName = Omit<ICelestialBody, 'name'>;
+type IAgr = Record<string, ICelestialBodyNoName>;
+type IGetAgr = (c: ICelestialBody[]) => Record<string, ICelestialBodyNoName>;
 
-export type IGetBackToCelestialBodies = (
+type IGetBackToCelestialBodies = (
   agr: Record<string, ICelestialBodyNoName>,
 ) => ICelestialBody[];
+
+export {
+  ICelestialBody,
+  ICelestialBodyNoName,
+  IAgr,
+  IGetAgr,
+  IGetBackToCelestialBodies,
+};

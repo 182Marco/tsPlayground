@@ -8,7 +8,7 @@ interface Lake {
   countries: string[];
 }
 
-export const lakes: Lake[] = [
+const lakes: Lake[] = [
   {
     name: 'Lake Baikal',
     areaInSquareKm: 31492,
@@ -59,19 +59,21 @@ export const lakes: Lake[] = [
 type IAggregate = Record<string, Omit<Lake, 'name'>>;
 type IGetAggregate = (lake: Lake[]) => IAggregate;
 
-export const getAggregateLakes: IGetAggregate = ar => {
+const getAggregateLakes: IGetAggregate = ar => {
   const aggregate: IAggregate = {};
 
   for (const l of ar) {
-    const {name, ...rest} = l;
-    aggregate[name] = {...rest};
+    const { name, ...rest } = l;
+    aggregate[name] = { ...rest };
   }
 
   return aggregate;
 };
 
-export const getAggregateLakes2: IGetAggregate = ar =>
+const getAggregateLakes2: IGetAggregate = ar =>
   ar.reduce((a, v) => {
-    const {name, ...rest} = v;
-    return {...a, [name]: {...rest}};
+    const { name, ...rest } = v;
+    return { ...a, [name]: { ...rest } };
   }, {});
+
+export { getAggregateLakes, getAggregateLakes2, lakes };

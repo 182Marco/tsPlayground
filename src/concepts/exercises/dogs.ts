@@ -15,7 +15,7 @@ interface IDog {
   trainability: string;
 }
 
-export const dogs: IDog[] = [
+const dogs: IDog[] = [
   {
     breed: 'Labrador Retriever',
     origin: 'United Kingdom',
@@ -69,19 +69,21 @@ export const dogs: IDog[] = [
 type IAggregate = Record<string, Omit<IDog, 'breed'>>;
 type IGetAggregate = (d: IDog[]) => IAggregate;
 
-export const getAggregateDogs: IGetAggregate = ar => {
+const getAggregateDogs: IGetAggregate = ar => {
   const aggregate: IAggregate = {};
 
   for (const d of ar) {
-    const {breed, ...rest} = d;
-    aggregate[breed] = {...rest};
+    const { breed, ...rest } = d;
+    aggregate[breed] = { ...rest };
   }
 
   return aggregate;
 };
 
-export const getAggregateDogs2: IGetAggregate = ar =>
+const getAggregateDogs2: IGetAggregate = ar =>
   ar.reduce((a, v) => {
-    const {breed, ...rest} = v;
-    return {...a, [breed]: {...rest}};
+    const { breed, ...rest } = v;
+    return { ...a, [breed]: { ...rest } };
   }, {});
+
+export { dogs, getAggregateDogs, getAggregateDogs2 };

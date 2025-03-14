@@ -1,10 +1,10 @@
-export interface IUser {
+interface IUser {
   fullName: string;
   email: string;
   id: number;
 }
 
-export const users: IUser[] = [
+const users: IUser[] = [
   {
     fullName: 'Alice',
     email: 'alice@gmail.com',
@@ -26,7 +26,7 @@ type IOrganizeInSingleObj = (
   users: IUser[],
 ) => Record<string, Pick<IUser, 'email' | 'id'>>;
 
-export const getAggregateUsers: IOrganizeInSingleObj = users =>
+const getAggregateUsers: IOrganizeInSingleObj = users =>
   users.reduce(
     (a, v) => ({
       ...a,
@@ -37,3 +37,5 @@ export const getAggregateUsers: IOrganizeInSingleObj = users =>
     }),
     {},
   );
+
+export { IUser, users, getAggregateUsers };

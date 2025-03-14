@@ -1,9 +1,11 @@
-export interface ISwimmer {
+interface ISwimmer {
   name: string;
   age: string;
   events: string[];
 }
 
-export type IGetBySecialities = (
+type IGetBySecialities = (
   s: ISwimmer[],
 ) => Record<string, Omit<ISwimmer, 'events'>[]>;
+
+export { IGetBySecialities, ISwimmer };

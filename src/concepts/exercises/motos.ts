@@ -15,7 +15,7 @@ interface IMoto {
   features: string[];
 }
 
-export const motos: IMoto[] = [
+const motos: IMoto[] = [
   {
     brand: 'Ducati',
     model: 'Panigale V4',
@@ -105,19 +105,21 @@ export const motos: IMoto[] = [
 type IAggregate = Record<string, Omit<IMoto, 'brand'>>;
 type IGetAggregate = (m: IMoto[]) => IAggregate;
 
-export const getAggregateMotos: IGetAggregate = ar => {
+const getAggregateMotos: IGetAggregate = ar => {
   const aggregate: IAggregate = {};
 
   for (const m of ar) {
-    const {brand, ...rest} = m;
-    aggregate[brand] = {...rest};
+    const { brand, ...rest } = m;
+    aggregate[brand] = { ...rest };
   }
 
   return aggregate;
 };
 
-export const getAggregateMotos2: IGetAggregate = ar =>
+const getAggregateMotos2: IGetAggregate = ar =>
   ar.reduce((a, v) => {
-    const {brand, ...rest} = v;
-    return {...a, [brand]: {...rest}};
+    const { brand, ...rest } = v;
+    return { ...a, [brand]: { ...rest } };
   }, {});
+
+export { getAggregateMotos, getAggregateMotos2, motos };

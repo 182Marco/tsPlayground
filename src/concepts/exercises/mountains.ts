@@ -11,7 +11,7 @@ interface Mountain {
   conservationStatus: string;
 }
 
-export const mountains: Mountain[] = [
+const mountains: Mountain[] = [
   {
     name: 'Mount Everest',
     heightInMeters: 8848,
@@ -78,19 +78,21 @@ type IAggregate = Record<string, Omit<Mountain, 'name'>>;
 
 type IAggregateMountains = (ar: Mountain[]) => IAggregate;
 
-export const aggregateMountains: IAggregateMountains = ar =>
+const aggregateMountains: IAggregateMountains = ar =>
   ar.reduce((a, v) => {
-    const {name, ...rest} = v;
-    return {...a, [name]: {...rest}};
+    const { name, ...rest } = v;
+    return { ...a, [name]: { ...rest } };
   }, {});
 
-export const aggregateMountains2: IAggregateMountains = ar => {
+const aggregateMountains2: IAggregateMountains = ar => {
   const aggrgated: IAggregate = {};
 
   for (const obj of ar) {
-    const {name, ...rest} = obj;
-    aggrgated[name] = {...rest};
+    const { name, ...rest } = obj;
+    aggrgated[name] = { ...rest };
   }
 
   return aggrgated;
 };
+
+export { aggregateMountains, aggregateMountains2, mountains };

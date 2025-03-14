@@ -1,6 +1,6 @@
-import {IDeepCopy} from './deepCopy.models';
+import { IDeepCopy } from './deepCopy.models';
 
-export const deepCopy: IDeepCopy = obj => {
+const deepCopy: IDeepCopy = obj => {
   if (typeof obj !== 'object' || obj === null) {
     return obj;
   }
@@ -13,3 +13,5 @@ export const deepCopy: IDeepCopy = obj => {
 
   return levelObj;
 };
+
+export { deepCopy };

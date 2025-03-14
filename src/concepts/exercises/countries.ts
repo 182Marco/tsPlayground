@@ -11,7 +11,7 @@ interface MiddleEasternCountry {
   timeZone: string;
 }
 
-export const middleEasternCountries: MiddleEasternCountry[] = [
+const middleEasternCountries: MiddleEasternCountry[] = [
   {
     name: 'Saudi Arabia',
     capital: 'Riyadh',
@@ -185,40 +185,49 @@ export const middleEasternCountries: MiddleEasternCountry[] = [
 type IAggregate = Record<string, Omit<MiddleEasternCountry, 'name'>>;
 type IGetAggregate = (c: MiddleEasternCountry[]) => IAggregate;
 
-export const getAggregatedCountries: IGetAggregate = ar => {
+const getAggregatedCountries: IGetAggregate = ar => {
   const aggregate: IAggregate = {};
 
   ar.forEach(c => {
-    const {name, ...rest} = c;
-    aggregate[name] = {...rest};
+    const { name, ...rest } = c;
+    aggregate[name] = { ...rest };
   });
 
   return aggregate;
 };
 
-export const getAggregatedCountries2: IGetAggregate = ar => {
+const getAggregatedCountries2: IGetAggregate = ar => {
   const aggregate: IAggregate = {};
 
   for (const c of ar) {
-    const {name, ...rest} = c;
-    aggregate[name] = {...rest};
+    const { name, ...rest } = c;
+    aggregate[name] = { ...rest };
   }
 
   return aggregate;
 };
 
-export const getAggregatedCountries3: IGetAggregate = ar =>
+const getAggregatedCountries3: IGetAggregate = ar =>
   ar.reduce((a, v) => {
-    const {name, ...rest} = v;
-    return {...a, [name]: {...rest}};
+    const { name, ...rest } = v;
+    return { ...a, [name]: { ...rest } };
   }, {});
 
-export const agrCountries = getAggregatedCountries3(middleEasternCountries);
+const agrCountries = getAggregatedCountries3(middleEasternCountries);
 
 type IGetBackToArray = (a: IAggregate) => MiddleEasternCountry[];
 
-export const getBackToCountriesAr: IGetBackToArray = agr =>
+const getBackToCountriesAr: IGetBackToArray = agr =>
   Object.keys(agr).map(k => ({
     name: k,
-    ...{...agr[k]},
+    ...{ ...agr[k] },
   }));
+
+export {
+  agrCountries,
+  getAggregatedCountries,
+  getAggregatedCountries2,
+  getAggregatedCountries3,
+  getBackToCountriesAr,
+  middleEasternCountries,
+};

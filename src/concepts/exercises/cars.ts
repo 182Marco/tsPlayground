@@ -8,10 +8,10 @@ interface Car {
 }
 
 // Array of car objects
-export const cars: Car[] = [
-  {model: 'Toyota', year: 2020, color: 'Blue'},
-  {model: 'Honda', year: 2019, color: 'Red'},
-  {model: 'Ford', year: 2021, color: 'Black'},
+const cars: Car[] = [
+  { model: 'Toyota', year: 2020, color: 'Blue' },
+  { model: 'Honda', year: 2019, color: 'Red' },
+  { model: 'Ford', year: 2021, color: 'Black' },
 ];
 
 // Exercise: Write a function that reduces the array of cars into an object
@@ -26,7 +26,7 @@ type IAggregateCars = (
   cars: Car[],
 ) => Record<string, Pick<Car, 'color' | 'year'>>;
 
-export const getAggregateCars: IAggregateCars = cars =>
+const getAggregateCars: IAggregateCars = cars =>
   cars.reduce(
     (a, v) => ({
       ...a,
@@ -37,3 +37,5 @@ export const getAggregateCars: IAggregateCars = cars =>
     }),
     {},
   );
+
+export { Car, getAggregateCars };

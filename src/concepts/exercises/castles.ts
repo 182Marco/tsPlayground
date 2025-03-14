@@ -8,7 +8,7 @@ type Castle = {
   isHaunted: boolean;
 };
 
-export const bavarianCastles: Castle[] = [
+const bavarianCastles: Castle[] = [
   {
     fullName: 'Neuschwanstein Castle',
     location: 'Schwangau',
@@ -59,29 +59,29 @@ export const bavarianCastles: Castle[] = [
 type IAggregate = Record<string, Omit<Castle, 'fullName'>>;
 type IAggregateGetAggregate = (ar: Castle[]) => IAggregate;
 
-export const getAggregatedCastles: IAggregateGetAggregate = ar => {
+const getAggregatedCastles: IAggregateGetAggregate = ar => {
   const aggregate: IAggregate = {};
 
   ar.forEach(e => {
-    const {fullName, ...rest} = e;
-    aggregate[fullName] = {...rest};
+    const { fullName, ...rest } = e;
+    aggregate[fullName] = { ...rest };
   });
 
   return aggregate;
 };
 
-export const getAggregatedCastles2: IAggregateGetAggregate = ar =>
+const getAggregatedCastles2: IAggregateGetAggregate = ar =>
   ar.reduce((a, v) => {
-    const {fullName, ...rest} = v;
-    return {...a, [fullName]: {...rest}};
+    const { fullName, ...rest } = v;
+    return { ...a, [fullName]: { ...rest } };
   }, {});
 
-export const getAggregatedCastles3: IAggregateGetAggregate = ar => {
+const getAggregatedCastles3: IAggregateGetAggregate = ar => {
   const aggregate: IAggregate = {};
 
   for (const c of ar) {
-    const {fullName, ...rest} = c;
-    aggregate[fullName] = {...rest};
+    const { fullName, ...rest } = c;
+    aggregate[fullName] = { ...rest };
   }
 
   return aggregate;
@@ -89,10 +89,19 @@ export const getAggregatedCastles3: IAggregateGetAggregate = ar => {
 
 type IGetBackToArray = (a: IAggregate) => Castle[];
 
-export const aggregateCatles = getAggregatedCastles2(bavarianCastles);
+const aggregateCatles = getAggregatedCastles2(bavarianCastles);
 
-export const getBackToCastelsArray: IGetBackToArray = agr =>
+const getBackToCastelsArray: IGetBackToArray = agr =>
   Object.keys(agr).map(k => ({
     fullName: k,
-    ...{...agr[k]},
+    ...{ ...agr[k] },
   }));
+
+export {
+  aggregateCatles,
+  bavarianCastles,
+  getAggregatedCastles,
+  getAggregatedCastles2,
+  getAggregatedCastles3,
+  getBackToCastelsArray,
+};

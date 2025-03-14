@@ -1,6 +1,6 @@
-import {ICelestialBody} from './models';
+import { ICelestialBody } from './models';
 
-export const celestialBodies: ICelestialBody[] = [
+const celestialBodies: ICelestialBody[] = [
   {
     name: 'Sun',
     massSolar: 1,
@@ -82,3 +82,5 @@ export const celestialBodies: ICelestialBody[] = [
     surfaceTemperature: -229,
   },
 ];
+
+export { celestialBodies };

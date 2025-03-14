@@ -1,4 +1,4 @@
-import {IDocNoSpec, IGetSpecialitiesObj} from './models';
+import { IDocNoSpec, IGetSpecialitiesObj } from './models';
 
 export const getSpecialitiesObjChatGPT: IGetSpecialitiesObj = docs =>
   [...new Set(docs.flatMap(d => d.specialities))].reduce(
@@ -6,7 +6,7 @@ export const getSpecialitiesObjChatGPT: IGetSpecialitiesObj = docs =>
       ...ac,
       [cur]: docs
         .filter(d => d.specialities.includes(cur))
-        .map(({specialities, ...rest}) => ({...rest})),
+        .map(({ specialities, ...rest }) => ({ ...rest })),
     }),
     {} as Record<string, IDocNoSpec[]>,
   );

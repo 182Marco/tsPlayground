@@ -11,7 +11,7 @@ interface City {
   universities: string[];
 }
 
-export const cities: City[] = [
+const cities: City[] = [
   {
     name: 'Tokyo',
     country: 'Japan',
@@ -85,8 +85,10 @@ export const cities: City[] = [
 ];
 
 type IAggregateCities = (c: City[]) => Record<string, Omit<City, 'name'>>;
-export const aggregateCities: IAggregateCities = ar =>
+const aggregateCities: IAggregateCities = ar =>
   ar.reduce((a, v) => {
-    const {name, ...rest} = v;
-    return {...a, name: {...rest}};
+    const { name, ...rest } = v;
+    return { ...a, name: { ...rest } };
   }, {});
+
+export { cities, aggregateCities };

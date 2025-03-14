@@ -1,3 +1,3 @@
-import * as C from "./concepts";
+import * as C from './concepts';
 
-console.log("vediamo cosa restiuisce ---> ", C.aggregateCities(C.cities));
+C.asyncDataFetchingExercise.getByThenSintaxMovie();

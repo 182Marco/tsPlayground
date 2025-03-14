@@ -5,14 +5,14 @@ import {
   IGetSpecialitiesObj,
 } from './models';
 
-export const getAllSpecialitiesInSet: IGetAllSpecialitiesInSet = ar => [
+const getAllSpecialitiesInSet: IGetAllSpecialitiesInSet = ar => [
   ...new Set([...ar.flatMap(d => d.specialities)]),
 ];
 
-export const getDocArrayNoSpec: IGetDocArrayNoSpec = ar =>
-  ar.map(({specialities, ...rest}) => ({...rest}));
+const getDocArrayNoSpec: IGetDocArrayNoSpec = ar =>
+  ar.map(({ specialities, ...rest }) => ({ ...rest }));
 
-export const getSpecialitiesObj: IGetSpecialitiesObj = docs => {
+const getSpecialitiesObj: IGetSpecialitiesObj = docs => {
   const specAr = getAllSpecialitiesInSet(docs);
   const aggregate: Record<string, IDocNoSpec[]> = {};
 
@@ -24,3 +24,5 @@ export const getSpecialitiesObj: IGetSpecialitiesObj = docs => {
 
   return aggregate;
 };
+
+export { getAllSpecialitiesInSet, getSpecialitiesObj, getDocArrayNoSpec };

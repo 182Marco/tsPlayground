@@ -8,7 +8,7 @@ interface ITree {
   region: string;
 }
 
-export const trees: ITree[] = [
+const trees: ITree[] = [
   {
     name: 'Oak',
     type: 'Deciduous',
@@ -56,30 +56,30 @@ export const trees: ITree[] = [
   },
 ];
 
-export type IAggregate = Record<string, Omit<ITree, 'name'>>;
-export type IGetAggregate = (ar: ITree[]) => IAggregate;
+type IAggregate = Record<string, Omit<ITree, 'name'>>;
+type IGetAggregate = (ar: ITree[]) => IAggregate;
 
-export const getAggregatedTrees: IGetAggregate = ar =>
+const getAggregatedTrees: IGetAggregate = ar =>
   ar.reduce((a, v) => {
-    const {name, ...rest} = v;
-    return {...a, [name]: {...rest}};
+    const { name, ...rest } = v;
+    return { ...a, [name]: { ...rest } };
   }, {});
 
-export const getAggregatedTrees2: IGetAggregate = ar => {
+const getAggregatedTrees2: IGetAggregate = ar => {
   const agr: IAggregate = {};
   ar.forEach(e => {
-    const {name, ...rest} = e;
-    agr[name] = {...rest};
+    const { name, ...rest } = e;
+    agr[name] = { ...rest };
   });
   return agr;
 };
 
-export const getAggregatedTrees3: IGetAggregate = ar => {
+const getAggregatedTrees3: IGetAggregate = ar => {
   const agr: IAggregate = {};
 
   for (const t of ar) {
-    const {name, ...rest} = t;
-    agr[name] = {...rest};
+    const { name, ...rest } = t;
+    agr[name] = { ...rest };
   }
 
   return agr;
@@ -87,5 +87,15 @@ export const getAggregatedTrees3: IGetAggregate = ar => {
 
 type IBackToArray = (a: IAggregate) => ITree[];
 
-export const treesBackToAr: IBackToArray = agr =>
-  Object.keys(agr).map(k => ({name: k, ...{...agr[k]}}));
+const treesBackToAr: IBackToArray = agr =>
+  Object.keys(agr).map(k => ({ name: k, ...{ ...agr[k] } }));
+
+export {
+  IAggregate,
+  IGetAggregate,
+  getAggregatedTrees,
+  treesBackToAr,
+  getAggregatedTrees2,
+  getAggregatedTrees3,
+  trees,
+};

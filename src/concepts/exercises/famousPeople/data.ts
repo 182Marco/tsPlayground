@@ -1,6 +1,6 @@
-import {IVip} from './models';
+import { IVip } from './models';
 
-export const vips: IVip[] = [
+const vips: IVip[] = [
   {
     name: 'Elon Musk',
     traits: ['Visionary', 'Innovative', 'Entrepreneurial'],
@@ -27,3 +27,5 @@ export const vips: IVip[] = [
     occupation: 'Co-founder of Apple',
   },
 ];
+
+export { vips };

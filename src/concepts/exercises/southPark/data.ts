@@ -1,6 +1,6 @@
-import {ISouthParkCharacter} from './models';
+import { ISouthParkCharacter } from './models';
 
-export const southParkCharacters: ISouthParkCharacter[] = [
+const southParkCharacters: ISouthParkCharacter[] = [
   {
     name: 'Cartman',
     role: ['Main character'],
@@ -22,3 +22,5 @@ export const southParkCharacters: ISouthParkCharacter[] = [
     traits: ['Caring', 'Sensible', 'Adventurous'],
   },
 ];
+
+export { southParkCharacters };

@@ -1,8 +1,10 @@
-export interface IRunner {
+interface IRunner {
   name: string;
   age: number;
   events: string[];
 }
 
-export type AgrRunners = Record<string, Omit<IRunner, 'name'>>[];
-export type IGetAgrRunners = (r: IRunner[]) => AgrRunners;
+type AgrRunners = Record<string, Omit<IRunner, 'name'>>[];
+type IGetAgrRunners = (r: IRunner[]) => AgrRunners;
+
+export { AgrRunners, IRunner, IGetAgrRunners };
