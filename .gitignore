@@ -1,5 +1,5 @@
 
 node_modules/
 # Ignore everything in the dist folder
-/dist/*
+/dist/concepts
 
