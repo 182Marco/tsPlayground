@@ -1,0 +1,11 @@
+const companyDetailsObjReq = (simbol = 'twtr') => ({
+  method: 'GET',
+  url: 'https://myallies-breaking-news-v1.p.rapidapi.com/GetCompanyDetailsBySymbol',
+  params: { symbol: simbol },
+  headers: {
+    'x-rapidapi-host': 'myallies-breaking-news-v1.p.rapidapi.com',
+    'x-rapidapi-key': '7d7ff518damsh637aa07aa764686p188b8fjsn133a70550d88',
+  },
+});
+
+export { companyDetailsObjReq };
