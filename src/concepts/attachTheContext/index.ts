@@ -1,2 +1,6 @@
-export { greet } from './exercise';
-export { people } from './pepoleObjs';
+export {
+  greetAllwithCall,
+  greetAllwithApply,
+  greetWithBind,
+  greetWithBindCurring,
+} from './exercise';
