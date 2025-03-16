@@ -1,4 +1,4 @@
-import { Person } from './models';
+import { IPerson } from './models';
 
 const people: IPerson[] = [
   { firstName: 'John', lastName: 'Smith', age: 28 },
