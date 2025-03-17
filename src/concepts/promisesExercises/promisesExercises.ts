@@ -39,8 +39,8 @@ const getByThenSintaxMovie = () =>
 const getByAsyncSintaxMovie = async () => {
   try {
     const movies = await getMovies();
+    console.log(`marcom ---> movies: `, movies);
     const movie = await getMoviesSpecs(movies.results[3].id);
-    console.log(`movie with async await syntax --> ': `, movie);
   } catch (er) {
     console.error(er);
   }
