@@ -3,7 +3,7 @@ import {
   IGetMoviesSpecs,
   IGetMoviesCallBackSupport,
   IGetMovieSpecsCallBackSupport,
-} from './models';
+} from './types';
 import * as U from './utils';
 
 const getMovies: IGetMovies = () =>
