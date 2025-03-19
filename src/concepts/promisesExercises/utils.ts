@@ -1,4 +1,4 @@
-import { IGetLink, IGetLinkById } from './models';
+import { IGetLink, IGetLinkById } from './types';
 
 const apikey = '5f6d881d6af75a5cb6855a550e2cd3d2';
 const basicUrl = 'https://api.themoviedb.org/3';
