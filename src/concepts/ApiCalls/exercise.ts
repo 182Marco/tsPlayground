@@ -1,0 +1,30 @@
+import axios from 'axios';
+import { companyDetailsObjReq, objPrarmsArrayForCalls } from './calls';
+import { IAxiosRes, IGetReqWithAxios } from './models';
+
+const getResThenMethod: IGetReqWithAxios = options =>
+  axios
+    .request(options ? options : companyDetailsObjReq())
+    .then((res: IAxiosRes) => {
+      console.log(res.data);
+    })
+    .catch((er: string) => {
+      console.error(er);
+    });
+
+const getResAwaitMethod: IGetReqWithAxios = async options => {
+  try {
+    const res: IAxiosRes = await axios.request(
+      options ? options : companyDetailsObjReq(),
+    );
+    console.log(`res: `, res.data);
+  } catch (er: unknown) {
+    console.error(er);
+  }
+};
+
+const callsParams = objPrarmsArrayForCalls.map(obj => getResAwaitMethod(obj));
+
+const parallelCallsNoStop = () => Promise.allSettled(callsParams);
+
+export { getResThenMethod, getResAwaitMethod, parallelCallsNoStop };
