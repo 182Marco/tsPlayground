@@ -5,21 +5,16 @@ import { IAxiosRes, IGetReqWithAxios } from './models';
 const getResThenMethod: IGetReqWithAxios = options =>
   axios
     .request(options ? options : companyDetailsObjReq())
-    .then((res: IAxiosRes) => {
-      console.log(res.data);
-    })
+    .then((res: IAxiosRes) => res)
     .catch((er: string) => {
       console.error(er);
     });
 
 const getResAwaitMethod: IGetReqWithAxios = async options => {
   try {
-    const res: IAxiosRes = await axios.request(
-      options ? options : companyDetailsObjReq(),
-    );
-    console.log(`res: `, res.data);
+    return await axios.request(options ? options : companyDetailsObjReq());
   } catch (er: unknown) {
-    console.error(er);
+    return er;
   }
 };
 
