@@ -7,23 +7,23 @@ import {
 
 // callback hell syntax
 const getByCallBackHellMovie = () => {
-  getMoviesCallBackSupport((err, movies) => {
-    if (err) {
-      console.log(err);
+  getMoviesCallBackSupport((er, movies) => {
+    if (er) {
+      return er;
       return;
     }
 
     if (!movies || !movies.results || movies.results.length < 4) {
-      console.log('Not enough movies in the results.');
+      return 'Not enough movies in the results.';
       return;
     }
 
     getMovieSpecsCallBackSupport(movies.results[3].id, (err, movie) => {
-      if (err) {
-        console.log(err);
+      if (er) {
+        return er;
         return;
       }
-      console.log('Movie with callback hell syntax -->', movie);
+      return `Movie with callback hell syntax --> ${movie}`;
     });
   });
 };
@@ -32,14 +32,13 @@ const getByCallBackHellMovie = () => {
 const getByThenSintaxMovie = () =>
   getMovies()
     .then(movies => getMoviesSpecs(movies.results[3].id))
-    .then(movie => console.log('movie with then syntax --> :', movie))
-    .catch(err => console.error(err));
+    .then(movie => `Movie with then  syntax --> ${movie}`)
+    .catch(er => er);
 
 // async await syntax
 const getByAsyncSintaxMovie = async () => {
   try {
     const movies = await getMovies();
-    console.log(`marcom ---> movies: `, movies);
     const movie = await getMoviesSpecs(movies.results[3].id);
   } catch (er) {
     console.error(er);
