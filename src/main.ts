@@ -1,3 +1,4 @@
 import * as C from './concepts';
 
-C.asyncDataFetchingExercise.getByThenSintaxMovie();
+console.log(C.isDog(C.myDog));
+console.log(C.isDog(C.myCat));
