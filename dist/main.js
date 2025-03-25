@@ -34,4 +34,5 @@ var __importStar = (this && this.__importStar) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 const C = __importStar(require("./concepts"));
-C.asyncDataFetchingExercise.getByThenSintaxMovie();
+console.log(C.isDog(C.myDog));
+console.log(C.isDog(C.myCat));
