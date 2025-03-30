@@ -7,3 +7,4 @@ export * from './promisesExercises';
 export * from './records';
 export * from './tsOverload';
 export * from './typeGuards';
+export * from './createClass';
