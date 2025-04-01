@@ -29,8 +29,9 @@ const prof = new Person('Math');
 
 Object.assign(Object.getPrototypeOf(person), { lastName: 'Doe' });
 
-// Now, try to console.log Bill and Marco,
-// and you will see that with prototypical
-// inheritance, they will have the same last name.
+// Now, try to console.log person and,
+// student and you will see that with
+// prototypical inheritance, they will
+// have the same last name of prof.
 
-export { person, prof };
+export { person, student, prof };
