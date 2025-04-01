@@ -1,1 +1,1 @@
-export { person, prof } from './prototypicalInheritance';
+export { person, student, prof } from './prototypicalInheritance';
