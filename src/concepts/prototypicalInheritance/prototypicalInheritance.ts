@@ -1,24 +1,36 @@
 import { IPerson, IStudent, IProf } from './prototypicalInheritance.models';
 
-const marco: IPerson = {
-  name: 'Marco',
-};
+class Person implements IPerson {
+  constructor(public name: string) {}
+}
 
-const bil: IStudent = {
-  name: 'Bil',
-  institute: 'T. S. Eliot',
-};
+class Student extends Person implements IStudent {
+  constructor(
+    name: string,
+    public institute: string,
+  ) {
+    super(name);
+  }
+}
 
-const al: IProf = {
-  name: 'Al',
-  institute: 'T. S. Eliot',
-  subject: 'Math',
-};
+class Prof extends Student implements IProf {
+  constructor(
+    name: string,
+    institute: string,
+    public subject: string,
+  ) {
+    super(name, institute);
+  }
+}
 
-Object.assign(Object.getPrototypeOf(al), { lastName: 'Doe' });
+const person = new Person('Marco');
+const student = new Person('T. S. Elliot');
+const prof = new Person('Math');
+
+Object.assign(Object.getPrototypeOf(person), { lastName: 'Doe' });
 
 // Now, try to console.log Bill and Marco,
 // and you will see that with prototypical
 // inheritance, they will have the same last name.
 
-export { marco, bil };
+export { person, prof };
