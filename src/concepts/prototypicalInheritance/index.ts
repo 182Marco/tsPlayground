@@ -1,1 +1,1 @@
-export { marco, bil } from './prototypicalInheritance';
+export { person, prof } from './prototypicalInheritance';
